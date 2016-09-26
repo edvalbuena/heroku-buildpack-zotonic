@@ -4,7 +4,7 @@
 main([Src, Dest])->
   {ok, [Terms]} = file:consult(Src),
   Url = os:getenv("DATABASE_URL"),
-  Password = os:getenv("ADMIN_PASSWORD"),
+  Password = os:getenv("parakangtanga"),
   Dict = dict:from_list(Terms),
   {ok, {postgres, UserPass, Host, Port, [$/ | DbName], _}} = http_uri:parse(Url),
   [User, Pass] = string:tokens(UserPass, ":"),
